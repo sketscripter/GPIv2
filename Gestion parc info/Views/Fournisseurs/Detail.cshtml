@@ -1,0 +1,15 @@
+﻿@model Gestion_parc_info.Models.Fournisseur
+@{
+    ViewBag.Title = "Detail Fournisseur";
+}
+<div class="nk-dislaimer">
+    <h2 class="display-1 lead" style="font-size: 25px;">Fournisseur n° @Model.CodeFournisseur</h2>
+
+    <p>Nom Fournisseur : <span>@Model.NomFournisseur</span></p>
+    <p>Adresse : <span>@Model.Adresse</span></p>
+    <p>Telephone : <span>@Model.Telephone</span></p>
+    <p>Fax : <span>@Model.Fax</span></p>
+    <p>Email : <span>@Model.Email</span></p>
+
+    @Html.ActionLink("Edit", "Edit", "Fournisseurs", new { id = Model.CodeFournisseur }, new { @class = "btn btn-primary" })
+</div>

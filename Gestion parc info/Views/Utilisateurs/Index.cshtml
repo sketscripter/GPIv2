@@ -1,0 +1,70 @@
+﻿@model List<Gestion_parc_info.Models.Utilisateur>
+@{
+    ViewBag.Title = "Utilisateurs";
+}
+<div style="display: flex; justify-content: space-between; margin: 10px auto; align-items: center ">
+    <h2 class="display-1"> Utilisateurs</h2>
+    @Html.ActionLink("Ajouter Utilisateur", "New", "Utilisateurs", null, new { @class = "btn btn-primary" })
+</div>
+
+<table class="table table-bordered table-striped" id="utilisateurs">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Role</th>
+            <th>Structure</th>
+            <th>Edit</th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var utilisateur in Model)
+        {
+        <tr>
+            <td>
+                @utilisateur.Nom
+            </td>
+            <td>
+                @utilisateur.Prenom
+            </td>
+            <td>
+                @utilisateur.Role
+            </td>
+            <td>
+                @utilisateur.Structure
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Utilisateurs", new { id = utilisateur.Matricule }, null)
+            </td>
+            <td>
+                @Html.ActionLink("Detail", "Detail", "Utilisateurs", new { id = utilisateur.Matricule }, null)
+            </td>
+            <td>
+                <button data-utilisateur-id="@utilisateur.Matricule" class="btn-link js-delete">delete</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+@section scripts{
+    <script>$(document).ready(function () {
+    $("#utilisateurs").dataTable();
+    $("#utilisateurs .js-delete").on("click", function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to delete this utilisateur ?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/utilisateurs/" + button.attr("data-utilisateur-id"),
+                            method: "DELETE",
+                            success: function () {
+                                button.parents("tr").remove();
+                            }
+                        });
+                    }
+                });
+            });
+        });</script>
+}

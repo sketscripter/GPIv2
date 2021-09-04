@@ -1,0 +1,52 @@
+﻿@model Gestion_parc_info.Models.Utilisateur
+@{
+    ViewBag.Title = "Edit Utilisateur";
+    var selectList = new SelectList(
+            new List<SelectListItem>
+            {
+            new SelectListItem {Text = "Admin Central ", Value = "Admin"},
+            new SelectListItem {Text = "Direction", Value = "User"},
+                }, "Value", "Text");
+}
+
+<h2 class="display-1" style="font-size: 40px;">Edit Utilisateur</h2>
+
+@using (Html.BeginForm("Save", "Utilisateurs"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nom)
+        @Html.TextBoxFor(m => m.Nom, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Nom)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Prenom)
+        @Html.TextBoxFor(m => m.Prenom, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Prenom)
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Role)
+        @Html.DropDownListFor(m => m.Role, selectList)
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Structure)
+        @Html.TextBoxFor(m => m.Structure, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Structure)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MotDePasse)
+        @Html.TextBoxFor(m => m.MotDePasse, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MotDePasse)
+    </div>
+
+
+    @Html.HiddenFor(m => m.Matricule)
+    <button type="submit" class="btn btn-primary">Save</button>
+}

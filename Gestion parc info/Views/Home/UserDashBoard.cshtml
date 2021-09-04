@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "UserDashBoard";
+}
+<br />
+<fieldset>
+    <legend> User DashBoard </legend>
+
+    @if (Session["UserName"] != null)
+    {<h2>Session User </h2>
+    <h2> Nom et Prenom : @Session["UserName"].ToString() </h2>
+    <h2> Matricule : @Session["UserID"].ToString() </h2>
+    <h2> Role : @Session["Role"].ToString() </h2>
+    <h2> Structure : @Session["Structure"].ToString() </h2>
+    }
+</fieldset>
+
+@Html.ActionLink("Logout", "Logout", null, null, new { @class = "btn btn-primary d-block my-5" })

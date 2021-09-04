@@ -1,0 +1,71 @@
+﻿@model List<Gestion_parc_info.Models.ContratMaintenance>
+@{
+    ViewBag.Title = "Contrat Maintenance";
+}
+<div style="display: flex; justify-content: space-between; margin: 10px auto; align-items: center ">
+    <h2 class="display-1"> Contrat Maintenance</h2>
+    @Html.ActionLink("Ajouter ContratMaintenance", "New", "ContratMaintenances", null, new { @class = "btn btn-primary" })
+</div>
+
+<table class="table table-bordered table-striped" id="contratMaintenances">
+    <thead>
+        <tr>
+            <th>Numero de contrat</th>
+            <th>Type de Contrat</th>
+            <th>Nom Societe</th>
+            <th>Date Contrat</th>
+            <th>Edit</th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var contratMaintenance in Model)
+        {
+            <tr>
+                <td>
+                    @contratMaintenance.NumeroContrat
+                </td>
+                <td>
+                    @contratMaintenance.Type
+                </td>
+                <td>
+                    @contratMaintenance.Societe
+                </td>
+                <td>
+                    @contratMaintenance.DateContrat.Day/@contratMaintenance.DateContrat.Month/@contratMaintenance.DateContrat.Year
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "ContratMaintenances", new { id = contratMaintenance.NumeroContrat }, null)
+                </td>
+                <td>
+                    @Html.ActionLink("Detail", "Detail", "ContratMaintenances", new { id = contratMaintenance.NumeroContrat }, null)
+                </td>
+                <td>
+                    <button data-contratMaintenance-id="@contratMaintenance.NumeroContrat" class="btn-link js-delete">delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section scripts{
+        <script>
+    $(document).ready(function () {
+                $("#contratMaintenances").dataTable();
+                $("#contratMaintenances .js-delete").on("click", function () {
+                    var button = $(this);
+                    bootbox.confirm("Are you sure you want to delete this contract ?", function (result) {
+                        if (result) {
+                            $.ajax({
+                                url: "/api/contratMaitenance/" + button.attr("data-contratMaintenance-id"),
+                                method: "DELETE",
+                                success: function () {
+                                    button.parents("tr").remove();
+                                }
+                            });
+                        }
+                    });
+                });
+            });</script>
+    }

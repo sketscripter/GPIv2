@@ -1,0 +1,16 @@
+﻿@model Gestion_parc_info.Models.Panne
+@{
+    ViewBag.Title = "Detail Panne";
+}
+<div class="nk-dislaimer">
+    <h2 class="display-1 lead" style="font-size: 25px;">Bon Panne Matériel n° @Model.NBonMateriel</h2>
+
+    <p>Code matériel : <span>@Model.CodeMateriel</span></p>
+    <p>Intervenant : <span>@Model.Intervenant</span></p>
+    <p>Date Réparation : <span>@Model.DateReparation</span></p>
+    <p>Responsable Emission : <span>@Model.ResponsableEmission</span></p>
+    <p>Responsable Reception: <span>@Model.ResponsableReception</span></p>
+    <p>Responsable Controle : <span>@Model.ResponsableControle</span></p>
+
+    @Html.ActionLink("Edit", "Edit", "Pannes", new { id = Model.NBonMateriel }, new { @class = "btn btn-primary" })
+</div>

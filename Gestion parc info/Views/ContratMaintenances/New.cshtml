@@ -1,0 +1,69 @@
+﻿@model Gestion_parc_info.Models.ContratMaintenance
+@{
+    ViewBag.Title = "New Contrat Maintenance";
+}
+
+<h2 class="display-1" style="font-size: 40px;">New Contrat Maintenance</h2>
+
+@using (Html.BeginForm("Save", "ContratMaintenances"))
+{
+    @Html.AntiForgeryToken()
+
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.Type)
+        @Html.TextBoxFor(m => m.Type, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Type)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Societe)
+        @Html.TextBoxFor(m => m.Societe, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Societe)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Telephone)
+        @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Telephone)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Fax)
+        @Html.TextBoxFor(m => m.Fax, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Fax)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DateContrat)
+        @Html.TextBoxFor(m => m.DateContrat, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DateContrat)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Duree)
+        @Html.TextBoxFor(m => m.Duree, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Duree)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CoutPrestation)
+        @Html.TextBoxFor(m => m.CoutPrestation, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CoutPrestation)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Adresse)
+        @Html.TextBoxFor(m => m.Adresse, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Adresse)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+
+    @Html.HiddenFor(m => m.NumeroContrat)
+    <button type="submit" class="btn btn-primary">Create</button>
+}

@@ -1,0 +1,52 @@
+﻿@model Gestion_parc_info.Models.Panne
+@{
+    ViewBag.Title = "Edit Panne";
+}
+
+<h2 class= "display-1" style = "font-size: 40px;" > Edit Panne </h2 >
+
+@using (Html.BeginForm("Save", "Pannes"))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class= "form-group" >
+    @Html.LabelFor(m => m.CodeMateriel)
+    @Html.TextBoxFor(m => m.CodeMateriel, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.CodeMateriel)
+    </div >
+
+    <div class= "form-group" >
+    @Html.LabelFor(m => m.DateReparation)
+    @Html.TextBoxFor(m => m.DateReparation, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.DateReparation)
+    </div >
+
+    <div class= "form-group" >
+    @Html.LabelFor(m => m.Intervenant)
+    @Html.TextBoxFor(m => m.Intervenant, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Intervenant)
+    </div >
+
+    <div class= "form-group" >
+    @Html.LabelFor(m => m.ResponsableControle)
+    @Html.TextBoxFor(m => m.ResponsableControle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.ResponsableControle)
+    </div >
+
+    <div class= "form-group" >
+    @Html.LabelFor(m => m.ResponsableEmission)
+    @Html.TextBoxFor(m => m.ResponsableEmission, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.ResponsableEmission)
+    </div >
+
+    <div class= "form-group" >
+    @Html.LabelFor(m => m.ResponsableReception)
+    @Html.TextBoxFor(m => m.ResponsableReception, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.ResponsableReception)
+    </div >
+
+
+    @Html.HiddenFor(m => m.NBonMateriel)
+    <button type = "submit" class= "btn btn-primary" > Save </button >
+}

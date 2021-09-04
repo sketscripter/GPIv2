@@ -1,0 +1,19 @@
+﻿@model Gestion_parc_info.Models.Fournisseur
+@{
+    ViewBag.Title = "Detail Fournisseur";
+}
+<div class="nk-dislaimer">
+    <h2 class="display-1 lead" style="font-size: 25px;">Contrat n° @Model.CodeFournisseur</h2>
+
+    <p>Type de Contrat: <span>@Model.Type</span></p>
+    <p>Nom Societe : <span>@Model.Societe</span></p>
+    <p>Adresse : <span>@Model.Adresse</span></p>
+    <p>Telephone : <span>@Model.Telephone</span></p>
+    <p>Fax : <span>@Model.Fax</span></p>
+    <p>Email : <span>@Model.Email</span></p>
+    <p>Date Contrat : <span>@Model.DateContrat</span></p>
+    <p>Duree Contrat : <span>@Model.Duree</span></p>
+    <p>Cout Prestation : <span>@Model.CoutPrestation</span></p>
+
+    @Html.ActionLink("Edit", "Edit", "ContratMaintenances", new { id = Model.NumeroContrat }, new { @class = "btn btn-primary" })
+</div>
