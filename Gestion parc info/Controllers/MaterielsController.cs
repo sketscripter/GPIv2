@@ -21,7 +21,6 @@ namespace Gestion_parc_info.Controllers
             if (Session["UserID"] != null)
             {
                 var materiels = _context.Materiels.ToList();
-
                 return View(materiels);
             }
             else

@@ -25,7 +25,7 @@
         {
             <tr>
                 <td>
-                    @contratMaintenance.NumeroContrat
+                    @contratMaintenance.Id
                 </td>
                 <td>
                     @contratMaintenance.Type
@@ -37,13 +37,13 @@
                     @contratMaintenance.DateContrat.Day/@contratMaintenance.DateContrat.Month/@contratMaintenance.DateContrat.Year
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", "ContratMaintenances", new { id = contratMaintenance.NumeroContrat }, null)
+                    @Html.ActionLink("Edit", "Edit", "ContratMaintenances", new { id = contratMaintenance.Id }, null)
                 </td>
                 <td>
-                    @Html.ActionLink("Detail", "Detail", "ContratMaintenances", new { id = contratMaintenance.NumeroContrat }, null)
+                    @Html.ActionLink("Detail", "Detail", "ContratMaintenances", new { id = contratMaintenance.Id }, null)
                 </td>
                 <td>
-                    <button data-contratMaintenance-id="@contratMaintenance.NumeroContrat" class="btn-link js-delete">delete</button>
+                    <button data-contratMaintenance-id="@contratMaintenance.Id" class="btn-link js-delete">delete</button>
                 </td>
             </tr>
         }

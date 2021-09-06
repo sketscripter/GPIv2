@@ -22,7 +22,7 @@ namespace Gestion_parc_info.Models
         public String ResponsableControle { get; set; }
 
 
-        public int MatriculeUtilisateur { get; set; }
+        public int IdUtilisateur { get; set; }
 
         public DateTime DateAffectation { get; set; }
     }

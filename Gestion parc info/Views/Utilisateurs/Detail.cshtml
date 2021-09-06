@@ -3,11 +3,11 @@
     ViewBag.Title = "Detail";
 }
 <div class="nk-dislaimer">
-    <h2 class="display-1 lead" style="font-size: 25px;">Utilisateur n° @Model.Matricule</h2>
+    <h2 class="display-1 lead" style="font-size: 25px;">Utilisateur n° @Model.Id</h2>
 
     <p>Nom : <span>@Model.Nom</span></p>
     <p>Prenom : <span>@Model.Prenom</span></p>
     <p>Role : <span>@Model.Role</span></p>
     <p>Structure : <span>@Model.Structure</span></p>
-    @Html.ActionLink("Edit Utilisateur", "Edit", "Utilisateurs", new { id = Model.Matricule }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Edit Utilisateur", "Edit", "Utilisateurs", new { id = Model.Id }, new { @class = "btn btn-primary" })
 </div>

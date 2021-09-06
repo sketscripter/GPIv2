@@ -194,10 +194,12 @@ C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\bin\fr\Syste
 C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\bin\fr\System.Web.Http.resources.dll
 C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\bin\fr\System.Web.Http.WebHost.resources.dll
 C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion parc info.csprojAssemblyReference.cache
-C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion_parc_info.Migrations.newseed.resources
-C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion parc info.csproj.GenerateResource.cache
 C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion parc info.csproj.CoreCompileInputs.cache
 C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion parc info.csproj.CopyComplete
 C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion parc info.dll
 C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion parc info.pdb
-C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion_parc_info.Migrations.excelviewadded.resources
+C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion_parc_info.Migrations.firstseed.resources
+C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion parc info.csproj.GenerateResource.cache
+C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion_parc_info.Migrations._2ndtry.resources
+C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion_parc_info.Migrations.equipementetdirection.resources
+C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion_parc_info.Migrations.equipementetdirection2.resources

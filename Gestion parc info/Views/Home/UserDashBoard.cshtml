@@ -8,7 +8,7 @@
     @if (Session["UserName"] != null)
     {<h2>Session User </h2>
     <h2> Nom et Prenom : @Session["UserName"].ToString() </h2>
-    <h2> Matricule : @Session["UserID"].ToString() </h2>
+    <h2> Id : @Session["UserID"].ToString() </h2>
     <h2> Role : @Session["Role"].ToString() </h2>
     <h2> Structure : @Session["Structure"].ToString() </h2>
     }

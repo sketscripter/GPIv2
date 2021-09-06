@@ -34,7 +34,7 @@ namespace Gestion_parc_info.Controllers
 
         public ActionResult Detail(int id)
         {
-            var contratmaintenance = _context.ContratMaintenances.Where(c => c.NumeroContrat == id).FirstOrDefault();
+            var contratmaintenance = _context.ContratMaintenances.Where(c => c.Id == id).FirstOrDefault();
             if (contratmaintenance == null)
             {
                 return HttpNotFound();
@@ -71,7 +71,7 @@ namespace Gestion_parc_info.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(ContratMaintenance contratmaintenance)
         {
-            if (contratmaintenance.NumeroContrat == 0)
+            if (contratmaintenance.Id == 0)
             {
                 if (ModelState.IsValid == false)
                 {
@@ -87,7 +87,7 @@ namespace Gestion_parc_info.Controllers
                 {
                     return View("Edit", contratmaintenance);
                 }
-                var ContratMaintenanceInDb = _context.ContratMaintenances.Find(contratmaintenance.NumeroContrat);
+                var ContratMaintenanceInDb = _context.ContratMaintenances.Find(contratmaintenance.Id);
 
                 ContratMaintenanceInDb.Type = contratmaintenance.Type;
                 ContratMaintenanceInDb.Societe = contratmaintenance.Societe;

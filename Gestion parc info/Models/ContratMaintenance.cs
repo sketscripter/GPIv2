@@ -9,8 +9,8 @@ namespace Gestion_parc_info.Models
     public class ContratMaintenance
 
     {
-        [Key]
-        public int NumeroContrat { get; set; }
+        
+        public int Id { get; set; }
 
         public String Type { get; set; }
 

@@ -1,0 +1,23 @@
+﻿@model List<Gestion_parc_info.Models.Direction>
+@{ ViewBag.Title = "Direction Types"; }
+
+<h2 class="display-1 text-center">Direction Types</h2>
+
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Direction</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var direction in Model)
+        {
+<tr>
+    <td>
+        @direction.Name
+    </td>
+ 
+</tr>            }
+    </tbody>
+</table>

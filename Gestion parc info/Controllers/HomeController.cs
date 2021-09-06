@@ -31,10 +31,10 @@ namespace Gestion_parc_info.Controllers
             if (ModelState.IsValid)
             {
                                
-                    var obj = _context.Utilisateurs.Where(a => a.Matricule.Equals(objUser.Matricule) && a.MotDePasse.Equals(objUser.MotDePasse)).FirstOrDefault();
+                    var obj = _context.Utilisateurs.Where(a => a.Id.Equals(objUser.Id) && a.MotDePasse.Equals(objUser.MotDePasse)).FirstOrDefault();
                     if (obj != null)
                     {
-                        Session["UserID"] = obj.Matricule.ToString();
+                        Session["UserID"] = obj.Id.ToString();
                         Session["UserName"] = obj.Nom.ToString()+" "+obj.Prenom.ToString();
                         Session["Role"] = obj.Role.ToString();
                     Session["Structure"] = obj.Structure.ToString();

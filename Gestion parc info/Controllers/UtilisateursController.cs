@@ -34,7 +34,7 @@ namespace Gestion_parc_info.Controllers
 
         public ActionResult Detail(int id)
         {
-            var utilisateur = _context.Utilisateurs.Where(c => c.Matricule == id).FirstOrDefault();
+            var utilisateur = _context.Utilisateurs.Where(c => c.Id == id).FirstOrDefault();
             if (utilisateur == null)
             {
                 return HttpNotFound();
@@ -73,7 +73,7 @@ namespace Gestion_parc_info.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Utilisateur utilisateur)
         {
-            if (utilisateur.Matricule == 0)
+            if (utilisateur.Id == 0)
             {
                 if (ModelState.IsValid == false)
                 {
@@ -90,7 +90,7 @@ namespace Gestion_parc_info.Controllers
                     return View("Edit", utilisateur);
                 }
 
-                var UtilisateurInDb = _context.Utilisateurs.Find(utilisateur.Matricule);
+                var UtilisateurInDb = _context.Utilisateurs.Find(utilisateur.Id);
 
                 UtilisateurInDb.Nom = utilisateur.Nom;
                 UtilisateurInDb.Prenom = utilisateur.Prenom;

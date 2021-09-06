@@ -37,13 +37,13 @@
                 @utilisateur.Structure
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", "Utilisateurs", new { id = utilisateur.Matricule }, null)
+                @Html.ActionLink("Edit", "Edit", "Utilisateurs", new { id = utilisateur.Id }, null)
             </td>
             <td>
-                @Html.ActionLink("Detail", "Detail", "Utilisateurs", new { id = utilisateur.Matricule }, null)
+                @Html.ActionLink("Detail", "Detail", "Utilisateurs", new { id = utilisateur.Id }, null)
             </td>
             <td>
-                <button data-utilisateur-id="@utilisateur.Matricule" class="btn-link js-delete">delete</button>
+                <button data-utilisateur-id="@utilisateur.Id" class="btn-link js-delete">delete</button>
             </td>
         </tr>
         }

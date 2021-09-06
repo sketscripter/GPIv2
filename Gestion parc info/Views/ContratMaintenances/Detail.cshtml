@@ -3,7 +3,7 @@
     ViewBag.Title = "Detail Contrat Maintenance";
 }
 <div class="nk-dislaimer">
-    <h2 class="display-1 lead" style="font-size: 25px;">Contrat n° @Model.NumeroContrat</h2>
+    <h2 class="display-1 lead" style="font-size: 25px;">Contrat n° @Model.Id</h2>
 
     <p>Type de Contrat: <span>@Model.Type</span></p>
     <p>Nom Societe : <span>@Model.Societe</span></p>
@@ -15,5 +15,5 @@
     <p>Duree Contrat : <span>@Model.Duree</span></p>
     <p>Cout Prestation : <span>@Model.CoutPrestation</span></p>
 
-    @Html.ActionLink("Edit", "Edit", "ContratMaintenances", new { id = Model.NumeroContrat }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Edit", "Edit", "ContratMaintenances", new { id = Model.Id }, new { @class = "btn btn-primary" })
     </div>

@@ -1,0 +1,34 @@
+﻿@model Gestion_parc_info.ViewModels.equipementViewModel
+@{ ViewBag.Title = "New equipement"; }
+
+<h2 class="display-1" style="font-size: 40px;">New Equipement</h2>
+
+@using (Html.BeginForm("Save", "Equipements"))
+{
+@Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Equipement.Name)
+                    @Html.TextBoxFor(m => m.Equipement.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Equipement.Name)
+                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Equipement.Quantité)
+                                    @Html.TextBoxFor(m => m.Equipement.Quantité, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Equipement.Quantité)
+                                </div>
+
+                                                
+
+                                                                <div class="form-group">
+                                                                    @Html.LabelFor(m => m.Equipement.DirectionId)
+                                                                    @Html.DropDownListFor(m => m.Equipement.DirectionId, new SelectList(Model.Directions, "Id", "Name"), "Choisir direction", new { @class = "form-control" })
+                                                                </div>
+
+                                                                                
+
+
+                                                                                                                                                @Html.HiddenFor(m => m.Equipement.Id)
+                                                                                                                                                                <button type="submit" class="btn btn-primary">Create</button>}
+

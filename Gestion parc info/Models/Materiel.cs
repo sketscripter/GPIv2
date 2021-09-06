@@ -9,10 +9,13 @@ namespace Gestion_parc_info.Models
 {
     public class Materiel
     {
-        [Key]
-        public int NumeroDeSerie { get; set; }
+        
+        public int Id { get; set; }
 
         public Fournisseur Fournisseur { get; set; }
+        [Required]
+
+        public byte FournisseurId { get; set; }
 
         public DateTime DateService { get; set; }
 
@@ -31,10 +34,16 @@ namespace Gestion_parc_info.Models
         public String Designation { get; set; }
 
         public Utilisateur Utilisateur { get; set; }
+        [Required]
+        public byte UtilisateurId { get; set; }
 
         public ContratMaintenance ContratMaintenance { get; set; }
+        [Required]
+        public byte ContratMaintenanceId { get; set; }
 
         public List<Caracteristique> Caracteristiques { get; set; }
+        [Required]
+        public byte CaracteristiquesId { get; set; }
 
 
     }

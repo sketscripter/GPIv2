@@ -1,0 +1,39 @@
+﻿@model List<Gestion_parc_info.Models.Equipement>
+@{ ViewBag.Title = "Equipements"; }
+<div style="display: flex; justify-content: space-between; margin: 10px auto; align-items: center ">
+    <h2 class="display-1"> Equipements</h2>
+    @Html.ActionLink("Add A Equipement", "New", "Equipements", null, new { @class = "btn btn-primary" })
+</div>
+
+<table class=" table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Designation </th>
+            <th>Quantité </th>            
+            <th>Direction</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var equipement in Model)
+        {
+<tr>
+    <td>
+        @equipement.Name
+    </td>
+    <td>
+        @equipement.Quantité
+    </td>
+    
+    <td>
+        @equipement.Direction.Name
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", "Equipements", new { id = equipement.Id }, null)
+    </td>
+
+
+</tr>            }
+    </tbody>
+</table>

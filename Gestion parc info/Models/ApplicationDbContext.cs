@@ -18,6 +18,10 @@ namespace Gestion_parc_info.Models
             public DbSet<Utilisateur> Utilisateurs { get; set; }
             public DbSet<Fournisseur> Fournisseurs { get; set; }
             public DbSet<Panne> Pannes { get; set; }
+        public DbSet<Equipement> Equipements { get; set; }
+
+        public DbSet<Direction> Directions { get; set; }
+
 
         public DbSet<ContratMaintenance> ContratMaintenances { get; set; }
 

@@ -8,8 +8,8 @@ namespace Gestion_parc_info.Models
 {
     public class Utilisateur
     {
-        [Key]
-        public int Matricule { get; set; }
+        
+        public int Id { get; set; }
 
         public String Nom { get; set; }
 

@@ -10,8 +10,8 @@ namespace Gestion_parc_info.Models
     {
         public String NomCaracteristique { get; set; }
 
-        public int CodeMateriel { get; set; }
+        public double CodeMateriel { get; set; }
         [Key]
-        public int CodeCaracteristique { get; set; }
+        public int Id { get; set; }
     }
 }
