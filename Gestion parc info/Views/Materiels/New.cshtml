@@ -1,0 +1,79 @@
+﻿@model Gestion_parc_info.ViewModels.materielViewModel
+@{ ViewBag.Title = "New materiel"; }
+
+<h2 class="display-1" style="font-size: 40px;">New Materiel</h2>
+
+@using (Html.BeginForm("Save", "Materiels"))
+{
+@Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Materiel.Designation)
+                    @Html.TextBoxFor(m => m.Materiel.Designation, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Materiel.Designation)
+                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Materiel.DateService)
+                                    @Html.TextBoxFor(m => m.Materiel.DateService, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Materiel.DateService)
+                                </div>
+
+                                                <div class="form-group">
+                                                    @Html.LabelFor(m => m.Materiel.EtatMateriel)
+                                                    @Html.TextBoxFor(m => m.Materiel.EtatMateriel, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(m => m.Materiel.EtatMateriel)
+                                                </div>
+
+                                                                <div class="form-group">
+                                                                    @Html.LabelFor(m => m.Materiel.Maintenance)
+                                                                    @Html.TextBoxFor(m => m.Materiel.Maintenance, new { @class = "form-control" })
+                                                                    @Html.ValidationMessageFor(m => m.Materiel.Maintenance)
+                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    @Html.LabelFor(m => m.Materiel.Observations)
+                                                                                    @Html.TextBoxFor(m => m.Materiel.Observations, new { @class = "form-control" })
+                                                                                    @Html.ValidationMessageFor(m => m.Materiel.Observations)
+                                                                                </div>
+
+                                                                                                <div class="form-group">
+                                                                                                    @Html.LabelFor(m => m.Materiel.Type)
+                                                                                                    @Html.TextBoxFor(m => m.Materiel.Type, new { @class = "form-control" })
+                                                                                                    @Html.ValidationMessageFor(m => m.Materiel.Type)
+                                                                                                </div>
+
+                                                                                                                <div class="form-group">
+                                                                                                                    @Html.LabelFor(m => m.Materiel.Marque)
+                                                                                                                    @Html.TextBoxFor(m => m.Materiel.Marque, new { @class = "form-control" })
+                                                                                                                    @Html.ValidationMessageFor(m => m.Materiel.Marque)
+                                                                                                                </div>
+
+                                                                                                                                <div class="form-group">
+                                                                                                                                    @Html.LabelFor(m => m.Materiel.Modele)
+                                                                                                                                    @Html.TextBoxFor(m => m.Materiel.Modele, new { @class = "form-control" })
+                                                                                                                                    @Html.ValidationMessageFor(m => m.Materiel.Modele)
+                                                                                                                                </div>
+
+
+                                                                                                                                                <div class="form-group">
+                                                                                                                                                    @Html.LabelFor(m => m.Materiel.UtilisateurId)
+                                                                                                                                                    @Html.DropDownListFor(m => m.Materiel.UtilisateurId, new SelectList(Model.Utilisateurs, "Id", "Nom"), "Choisir utilisateur", new { @class = "form-control" })
+                                                                                                                                                </div>
+                                                                                                                                                                <div class="form-group">
+                                                                                                                                                                    @Html.LabelFor(m => m.Materiel.ContratMaintenanceId)
+                                                                                                                                                                    @Html.DropDownListFor(m => m.Materiel.ContratMaintenanceId, new SelectList(Model.ContratMaintenances, "Id", "Id"), "Choisir contrat", new { @class = "form-control" })
+                                                                                                                                                                </div>
+                                                                                                                                                                                <div class="form-group">
+                                                                                                                                                                                    @Html.LabelFor(m => m.Materiel.FournisseurId)
+                                                                                                                                                                                    @Html.DropDownListFor(m => m.Materiel.FournisseurId, new SelectList(Model.Fournisseurs, "CodeFournisseur", "NomFournisseur"), "Choisir fournisseur", new { @class = "form-control" })
+                                                                                                                                                                                </div>
+
+                                                                                                                                                                                                <div class="form-group">
+                                                                                                                                                                                                    @Html.LabelFor(m => m.Materiel.CaracteristiquesId)
+                                                                                                                                                                                                    @Html.DropDownListFor(m => m.Materiel.CaracteristiquesId, new SelectList(Model.Caracteristiques, "Id", "NomCaracteristique"), "Choisir caracteristique", new { @class = "form-control" })
+                                                                                                                                                                                                </div>
+
+
+                                                                                                                                                                                                                @Html.HiddenFor(m => m.Materiel.Id)
+                                                                                                                                                                                                                                <button type="submit" class="btn btn-primary">Create</button>}
+

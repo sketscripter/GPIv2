@@ -203,3 +203,4 @@ C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Ge
 C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion_parc_info.Migrations._2ndtry.resources
 C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion_parc_info.Migrations.equipementetdirection.resources
 C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion_parc_info.Migrations.equipementetdirection2.resources
+C:\Users\TONPC\Downloads\Gestion-parc-info-master\Gestion parc info\obj\Debug\Gestion_parc_info.Migrations.materielv3.resources

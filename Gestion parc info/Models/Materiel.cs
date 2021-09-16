@@ -41,7 +41,7 @@ namespace Gestion_parc_info.Models
         [Required]
         public byte ContratMaintenanceId { get; set; }
 
-        public List<Caracteristique> Caracteristiques { get; set; }
+        public Caracteristique Caracteristique { get; set; }
         [Required]
         public byte CaracteristiquesId { get; set; }
 

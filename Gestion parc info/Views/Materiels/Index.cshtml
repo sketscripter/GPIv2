@@ -2,7 +2,8 @@
 @{ ViewBag.Title = "Materiel"; }
 <div style="display: flex; justify-content: space-between; margin: 10px auto; align-items: center ">
     <h2 class="display-1"> Materiel</h2>
-   
+    @Html.ActionLink("Ajouter materiel", "New", "Materiels", null, new { @class = "btn btn-primary" })
+
 </div>
 
 <table class="table table-bordered table-striped" id="materiels">
@@ -37,13 +38,13 @@
                 @materiel.Designation
             </td>
             <td>
-                @materiel.Utilisateur
+                @materiel.Utilisateur.Nom @materiel.Utilisateur.Prenom
             </td>
             <td>
-                @materiel.ContratMaintenance
+                @materiel.ContratMaintenance.Id
             </td>
             <td> @materiel.Id</td>
-            <td> @materiel.Fournisseur</td>
+            <td> @materiel.Fournisseur.NomFournisseur</td>
             <td> @materiel.DateService</td>
             <td> @materiel.EtatMateriel</td>
             <td> @materiel.Maintenance</td>
@@ -51,7 +52,10 @@
             <td> @materiel.Type</td>
             <td> @materiel.Marque</td>
             <td> @materiel.Modele</td>
-            <td> @materiel.Caracteristiques</td>
+            <td> @materiel.Caracteristique.NomCaracteristique</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Materiels", new { id = materiel.Id }, null)
+            </td>
 
         </tr>}
     </tbody>
